@@ -1,4 +1,4 @@
-function Intern(name) {
+function Intern(name, email, github) {
   this.name = name;
 }
 
