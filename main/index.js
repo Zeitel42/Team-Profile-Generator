@@ -181,9 +181,9 @@ const engineerPrompts = () => {
                 </p>
               </div>
               <div class="content has-background-link-light has-text-link-dark">
-                <p class="content">Employee Id:${data.id}</p>
-                <p>Email: <a href="mailto:${data.email}">${data.email}</a></p>
-                <p>Github: <a href="https://github.com/${data.github}">${data.github}</a></p>
+                <p class="content">Employee Id: ${data.id}</p>
+                <p>Email: <a href="mailto:${data.email}"> ${data.email}</a></p>
+                <p>Github: <a href="https://github.com/${data.github}"> ${data.github}</a></p>
               </div>
             </div>
           </div>
@@ -281,8 +281,8 @@ const internPrompts = () => {
                 </p>
               </div>
               <div class="content has-background-info-light has-text-info-dark">
-                <p class="content">Employee Id:${data.id}</p>
-                <p>Email: <a href="mailto:${data.email}">${data.email}</a></p>
+                <p class="content">Employee Id: ${data.id}</p>
+                <p>Email: <a href="mailto:${data.email}"> ${data.email}</a></p>
                 <p>School: ${data.school}</p>
               </div>
             </div>
