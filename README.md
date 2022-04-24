@@ -5,6 +5,8 @@
 ## Built With
 HTML, Bulma, JavaScript, Express.js, Jest
 
-## Link to video
+## Link to walkthrough video
+
+https://watch.screencastify.com/v/oWTrD1IdRBJNBpdhURQb
 
 ## Contributions made by Zeitel42 
