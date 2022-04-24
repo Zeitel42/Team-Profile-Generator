@@ -1,4 +1,4 @@
-const Intern = require("../main/assets/js/intern");
+const Intern = require("../lib/assets/js/intern");
 
 test("create a new intern object", () => {
   const intern = new Intern("Jessi");
