@@ -1,4 +1,4 @@
-const Engineer = require("../main/engineer");
+const Engineer = require("../main/assets/js/engineer");
 
 test("creates a new engineer", () => {
   const engineer = new Engineer("Nerd");

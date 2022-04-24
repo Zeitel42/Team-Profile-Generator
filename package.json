@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Zeitel42/Team-Profile-Generator#readme",
   "dependencies": {
+    "@mdi/font": "^6.6.96",
     "inquirer": "^8.2.2"
   },
   "devDependencies": {

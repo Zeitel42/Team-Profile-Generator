@@ -74,8 +74,8 @@ function employeePrompts() {
       type: "list",
       name: "employee",
       message:
-        "Please select an employee to add from the list. Once all of your employees are added, select 'Finish' to generate organizational chart.",
-      choices: ["Engineer", "Intern", "Finish"],
+        "Please select an employee to add. Select 'I'm finished' to exit and generate organizational chart.",
+      choices: ["Engineer", "Intern", "I'm finished"],
     },
   ];
 
@@ -92,7 +92,7 @@ function employeePrompts() {
         // console.log("Intern prompts");
         internPrompts();
         break;
-      case "Finish":
+      case "I'm finished":
         console.log("Writing HTML file...");
         generateHTML();
         break;
@@ -167,19 +167,27 @@ const engineerPrompts = () => {
     // console.log(engineerArray);
     engineerHTML = engineerArray.map(function (data) {
       return ` 
-      <div class="card">
-        <div class="card-content">
-          <div class="media-content">
-            <p class="title is-4 is-centered has-background-link-dark has-text-link-light">${data.name}</p>
-            <p class="subtitle is-6">Engineer</p>
-          </div>
-          <div class="content has-background-link-light has-text-link-dark">
-            <p class="content">Employee Id:${data.id}</p>
-            <p>Email: <a href="${data.email}">${data.email}</a></p>
-            <p>Github: <a href="https://github.com/${data.github}">${data.github}</a></p>
+        <div class="column is-2">
+          <div class="card">
+            <div class="card-content">
+              <div class="media-content">
+                <p class="title is-4 has-background-link-dark has-text-link-light">${data.name}
+                <br>
+                <span class="subtitle is-6 has-background-link-dark has-text-link-light">Engineer</span>
+                <br>
+                <span><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12,15C7.58,15 4,16.79 4,19V21H20V19C20,16.79 16.42,15 12,15M8,9A4,4 0 0,0 12,13A4,4 0 0,0 16,9M11.5,2C11.2,2 11,2.21 11,2.5V5.5H10V3C10,3 7.75,3.86 7.75,6.75C7.75,6.75 7,6.89 7,8H17C16.95,6.89 16.25,6.75 16.25,6.75C16.25,3.86 14,3 14,3V5.5H13V2.5C13,2.21 12.81,2 12.5,2H11.5Z" />
+            </svg></span>
+                </p>
+              </div>
+              <div class="content has-background-link-light has-text-link-dark">
+                <p class="content">Employee Id:${data.id}</p>
+                <p>Email: <a href="mailto:${data.email}">${data.email}</a></p>
+                <p>Github: <a href="https://github.com/${data.github}">${data.github}</a></p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
         `;
     });
     engineerHTML = engineerHTML.join(" ");
@@ -259,19 +267,27 @@ const internPrompts = () => {
     // console.log(internArray);
     internHTML = internArray.map(function (data) {
       return ` 
-      <div class="card">
-      <div class="card-content">
-        <div class="media-content">
-          <p class="title is-4 is-centered has-background-info-dark has-text-info-light">${data.name}</p>
-          <p class="subtitle is-6">Intern</p>
+        <div class="column is-2">
+          <div class="card">
+            <div class="card-content">
+              <div class="media-content">
+                <p class="title is-4 is-centered has-background-info-dark has-text-info-light">${data.name}
+                <br>
+                <span class="subtitle is-6 is-centered has-background-info-dark has-text-info-light">Intern</span>
+                <br>
+                <span><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M18 10.5V6L15.89 7.06C15.96 7.36 16 7.67 16 8C16 10.21 14.21 12 12 12C9.79 12 8 10.21 8 8C8 7.67 8.04 7.36 8.11 7.06L5 5.5L12 2L19 5.5V10.5H18M12 9L10 8C10 9.1 10.9 10 12 10C13.1 10 14 9.1 14 8L12 9M14.75 5.42L12.16 4.1L9.47 5.47L12.07 6.79L14.75 5.42M12 13C14.67 13 20 14.33 20 17V20H4V17C4 14.33 9.33 13 12 13M12 14.9C9 14.9 5.9 16.36 5.9 17V18.1H18.1V17C18.1 16.36 14.97 14.9 12 14.9Z" />
+                </svg></span>
+                </p>
+              </div>
+              <div class="content has-background-info-light has-text-info-dark">
+                <p class="content">Employee Id:${data.id}</p>
+                <p>Email: <a href="mailto:${data.email}">${data.email}</a></p>
+                <p>School: ${data.school}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="content has-background-info-light has-text-info-dark">
-          <p class="content">Employee Id:${data.id}</p>
-          <p>Email: <a href="${data.email}">${data.email}</a></p>
-          <p>School: ${data.school}</p>
-        </div>
-      </div>
-    </div>
         `;
     });
     internHTML = internHTML.join(" ");
