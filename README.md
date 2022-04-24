@@ -3,7 +3,7 @@
 * A command line app that utilizes user prompted answers to generate an html organizational flow chart
 
 ## Built With
-HTML, Bulma, JavaScript, Express.js, Jest
+HTML, Bulma, JavaScript, Node.js, Jest
 
 ## Link to walkthrough video
 
